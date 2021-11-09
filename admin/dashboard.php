@@ -236,7 +236,7 @@
                     <img class="img1" src="../css/images/logo.png" width="100" height="100" alt="not found" />
                 </div>
                 <li><a href="dashboard.php"><i class="fas fa-clipboard"></i>Dashboard</a></li>
-                <li><a href=""><i class="fas fa-users"></i>SEE Students</a></li>
+                <li><a href=""><i class="fas fa-users"></i> SEE Students</a></li>
                 <li>
                     <div class="mdbtn">
                         <button class="dropdown-btn"><i class="fas fa-plus"></i>Add Subject<i class="fa fa-caret-down"></i>
@@ -286,6 +286,10 @@
                     if($page=="add_s8"){
                         include "add_sem/add_s8.php";
                     }
+                    // Show Students...............
+                    if($page=="disp_s1"){
+                        include "dis_sem/disp_s1.php";
+                    }
                 }else{
             
             
@@ -299,7 +303,7 @@
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                        <a class="dashboard-stat11" href="">
+                                        <a class="dashboard-stat11" href="dashboard.php?page=disp_s1">
                                             <span class="number">2</span>
                                             <span class="name">Subjects Listed<br />For 1th sem</span>
                                             <span class="bg-icon"><i class="fa fa-bars"></i></span>
