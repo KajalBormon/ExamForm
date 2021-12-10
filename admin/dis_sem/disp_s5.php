@@ -79,7 +79,7 @@
         <td style='border:2px solid black' align = 'center'><?php echo $row['sub_code']; ?></td>
         <td style='border:2px solid black' align = 'center'><?php echo $row['credit']; ?></td>
         <td align='center' style='border:2px solid black'> <a href="" style='color:green'><i class="fas fa-pencil-alt"></i></a> </td>
-        <td align='center' style='border:2px solid black'> <a href="" style='color:red'><i class="fas fa-trash"></i></a> </td>
+        <td align='center' style='border:2px solid black'> <a href="javascript:DeleteUser('<?php echo $row['id']; ?>')" style='color:red'><i class="fas fa-trash"></i></a> </td>
     </tr>
     <?php
           $i++;  
@@ -88,5 +88,14 @@
     ?>
     </table>
 </div>
+    <!-- Delete Subject Code -->
+    <script>
+        function DeleteUser(id){
+            if(confirm("You are Sure..? You want to delete this subjecet..??")){
+                window.location.href="delete/delete_1st.php?id=" +id;
+            }
+        }
+    </script>
+
 </body>
 </html>

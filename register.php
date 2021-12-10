@@ -40,7 +40,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Registration
-                            <span class="sr-only">(current)</span>
+                            <!-- <span class="sr-only">(current)</span> -->
                         </a>
                     </li>
 
@@ -202,7 +202,7 @@
 
                     </td>
                     <td class="td1">
-                        <input type="phone" autocomplete="off" name="phone" id="phone" placeholder="9998887776" />
+                        <input type="phone" autocomplete="off" name="phone" id="phone" placeholder="01700112233" />
                     </td>
                 </tr>
 
