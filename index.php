@@ -1,3 +1,31 @@
+<?php
+    include 'connection.php';
+    session_start();
+    if(isset($_POST['Login'])){
+        $username = mysqli_real_escape_string($conn,$_POST['username']);
+        $pass = md5($_POST['Password']);
+
+        if($username == "" || $pass == ""){
+            $err = "<font color='red' align='center'>Enter a Valid Username & Password</font>";
+        }else{
+            $sql = "SELECT * FROM registration WHERE username = '{$username}' AND password = '{$pass}'";
+            $query = mysqli_query($conn,$sql);
+            $result = mysqli_num_rows($query);
+            if($result){
+                $_SESSION['username'] = $_POST['username'];
+                header("location:http://localhost/exam_form/user/dashboard.php");
+            }else{
+                $err = "<font color='red'>Invalid login details</font>" . mysqli_error($conn);
+            }
+        }
+    }
+    if(isset($_SESSION['username'])){
+        header("location: http://localhost/exam_form/user/dashboard.php");
+    }
+   
+
+?>
+
 <!-- HOME | LOGIIN PAGE -->
 <!DOCTYPE html>
 <html>
@@ -76,7 +104,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-user"></i></span>
                                 </div>
-                                <input type="text" autocapitalize="characters" autocomplete="off" class="form-control a" name="usn" placeholder="Username">
+                                <input type="text" autocapitalize="characters" autocomplete="off" class="form-control a" name="username" placeholder="Username">
                             </div> 
                         
                             <div class="input-group form-group">

@@ -29,6 +29,9 @@
         text-align: center;
         text-shadow: 1px 1px 2px rgba(252, 164, 133, 0.6);
     }
+    table tr td{
+        text-align: center;
+    }
 </style>
 
 <body>
@@ -46,6 +49,12 @@
             <tbody>
                 <tr>
                     <td>100</td>
+                    <td>Algorithm</td>
+                    <td>CSE201</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>200</td>
                     <td>Algorithm</td>
                     <td>CSE201</td>
                     <td>3</td>

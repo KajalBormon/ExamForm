@@ -1,3 +1,38 @@
+<?php
+    include "connection.php";
+    if(isset($_POST['Register'])){
+
+        $file_name = $_FILES['img']['name'];
+        $file_tmp = $_FILES['img']['tmp_name'];
+
+        $fname = mysqli_real_escape_string($conn,$_POST['fname']);
+        $lname = mysqli_real_escape_string($conn,$_POST['lname']);
+        $dob = mysqli_real_escape_string($conn,$_POST['dob']);
+        $gen = mysqli_real_escape_string($conn,$_POST['gen']);
+        $username = mysqli_real_escape_string($conn,$_POST['username']);
+        $mail = mysqli_real_escape_string($conn,$_POST['mail']);
+        $dept = mysqli_real_escape_string($conn,$_POST['dept']);
+        $phone = mysqli_real_escape_string($conn,$_POST['phone']);
+        $pass = md5($_POST['psswd2']);
+
+  
+        $sql = "SELECT * FROM registration username = '$username'";
+        if(mysqli_query($conn,$sql)){
+            $err = "<font color='red'>Username Already Exists..!</font>";
+        }else{
+            $insert = "INSERT INTO registration(id,fname,lname,dob,gender,username,image,mail,dept,phone,password) values('','{$fname}','{$lname}','{$dob}','{$gen}','{$username}','{$file_name}','{$mail}','{$dept}','{$phone}','{$pass}')";
+
+            $data = mysqli_query($conn,$insert);
+
+            mkdir("images/$username");
+            move_uploaded_file($file_tmp,"images/$username/".$file_name);
+
+            if($data){
+                $err = "<font color='green'>Registered successfully...!!</font>";
+            }
+        }
+    }
+?>
 <!-- REGISTRATION FORM -->
 <!DOCTYPE html>
 <html lang="en">
@@ -5,7 +40,7 @@
     <title>Register Students</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Md Yaseen Ahmed">
+    <meta name="author" content="Kajal Bormon">
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="64x64" href="css/images/logo.png">
     <!-- Google Fonts -->
@@ -25,6 +60,28 @@
       
         }
     </style>
+        <script>
+            function matchPassword(){
+                var pass1 = document.getElementById("pass1").value;
+                var pass2 = document.getElementById("pass2").value;
+
+           
+                if(pass1!==pass2){
+                    document.getElementById("mgs").innerHTML="Don't match the password";
+                    return false;
+                }else{  
+                    return true;
+                }
+                if(pass1<5 && pass2<5){
+                    document.getElementById("mgs").innerHTML="Password must be greater than 5";
+                    return false;
+                }else{
+                    return true;
+                }
+                
+            }
+        
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -40,7 +97,6 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Registration
-                            <!-- <span class="sr-only">(current)</span> -->
                         </a>
                     </li>
 
@@ -175,27 +231,6 @@
 
                 <tr>
                     <td>
-                        <label class="label required">Semester</label>
-                    </td>
-                    <td>
-
-                    </td>
-                    <td class="td1">
-                        <select name="sem" autocomplete="off" class="select12" placeholder="" required>
-                            <option name="s1"> 1 </option>
-                            <option name="s2"> 2 </option>
-                            <option name="s3"> 3 </option>
-                            <option name="s4"> 4 </option>
-                            <option name="s5"> 5 </option>
-                            <option name="s6"> 6 </option>
-                            <option name="s7"> 7 </option>
-                            <option name="s8"> 8 </option>
-                        </select>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
                         <label>Phone</label>
                     </td>
                     <td>
@@ -229,7 +264,20 @@
 
                 <tr>
                     <td>
-                        <input type="submit" name="Register" class="login_btn" value="Submit" />
+                        <label class="label required">Confirm Password</label>
+                    </td>
+                    <td>
+
+                    </td>
+                    <td class="td1" class="label required">
+                        <input type="password" name="psswd2" id="pass2" placeholder="Confirm Password" required />
+                        <span id="mgs" style="color: red;"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="submit" onclick="return matchPassword()" name="Register" class="login_btn" value="Submit" />
                     </td>
                     <td>
 
@@ -242,6 +290,7 @@
         </form>
     </div>
     <!-- Scripting -->
+
     <script src="js/jquery_library.js"></script>
     <script src="js/bootstrap.min.js"></script>
 

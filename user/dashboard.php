@@ -1,3 +1,11 @@
+<?php
+    include "../connection.php";
+    session_start();
+    if(!isset($_SESSION['username'])){
+        header("location:http://localhost/exam_form/");
+    }
+
+?>
 <!-- Student DASHBOARD -->
 <!DOCTYPE html>
 <html lang="en">
@@ -5,7 +13,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Md Yaseen Ahmed">
+    <meta name="author" content="Kajal Bormon">
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="64x64" href="../css/images/logo.png">
     <!-- Google Fonts -->
@@ -207,12 +215,27 @@
                     <img src="../css/images/person.jpg" width="100" height="100" alt="not found" />
                 </div>
                 <li><a href="dashboard.php"><i class="fas fa-clipboard"></i>Dashboard</a></li>
-                <li><a href=""><i class="fas fa-user-edit"></i> Update Profile</a></li>
-                <li><a href=""><i class="fas fa-pen"></i>Register For Exam</a></li>
-                <li><a href=""><i class="far fa-file"></i> Registered Subjects</a></li>
+                <li><a href="dashboard.php?page=update_profile"><i class="fas fa-user-edit"></i> Update Profile</a></li>
+                <li><a href="dashboard.php?page=register"><i class="fas fa-pen"></i>Register For Exam</a></li>
+                <li><a href="dashboard.php?page=subjects_reg"><i class="far fa-file"></i> Registered Subjects</a></li>
             </ul>
         </div>
         <div class="col-sm-12 col-sm-offset-12 col-md-10 col-md-offset-2 main">
+            <?php
+                @$page = $_GET['page'];
+                if($page!=""){
+                    if($page=="update_profile"){
+                        include 'update_profile.php';
+                    }
+                    if($page=='subjects_reg'){
+                        include 'subjects_reg.php';
+                    }
+                    if($page='register'){
+                        include 'register.php';
+                    }
+                }
+            
+            ?>
             <!-- container-->
               <!-- Scripting -->
       <script src="js/jquery_library.js"></script>
