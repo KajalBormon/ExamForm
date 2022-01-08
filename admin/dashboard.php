@@ -2,7 +2,7 @@
   include "../connection.php";
   session_start();
   if(!isset($_SESSION['user'])){
-        header("location:{$hostname}/admin/");
+    header("location:{$hostname}/admin/");
   }
   include "count.php";
 ?>
@@ -232,7 +232,24 @@
                     <img class="img1" src="../css/images/logo.png" width="100" height="100" alt="not found" />
                 </div>
                 <li><a href="dashboard.php"><i class="fas fa-clipboard"></i>Dashboard</a></li>
-                <li><a href=""><i class="fas fa-users"></i> SEE Students</a></li>
+                <li>
+                <div class="mdbtn">
+                        <button class="dropdown-btn"><i class="fas fa-users"></i> See Students<i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-container">
+                            <ul>
+                                <li class="p-1"><a href="dashboard.php?page=see_s1">Semester 1 Students</a></li>
+                                <li class="p-1"><a href="dashboard.php?page=see_s2">Semester 2 Students</a></li>
+                                <li class="p-1"><a href="dashboard.php?page=see_s3">Semester 3 Students</a></li>
+                                <li class="p-1"><a href="dashboard.php?page=see_s4">Semester 4 Students</a></li>
+                                <li class="p-1"><a href="dashboard.php?page=see_s5">Semester 5 Students</a></li>
+                                <li class="p-1"><a href="dashboard.php?page=see_s6">Semester 6 Students</a></li>
+                                <li class="p-1"><a href="dashboard.php?page=see_s7">Semester 7 Students</a></li>
+                                <li class="p-1"><a href="dashboard.php?page=see_s8">Semester 8 Students</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
                 <li>
                     <div class="mdbtn">
                         <button class="dropdown-btn"><i class="fas fa-plus"></i>Add Subject<i class="fa fa-caret-down"></i>
@@ -255,6 +272,7 @@
         </div>
         <div class="col-sm-12 col-sm-offset-12 col-md-10 col-md-offset-2 main">
             <!-- container-->
+            <!-- Add Students -->
             <?php 
                 @$page = $_GET['page'];
                 if($page!=""){
@@ -282,7 +300,10 @@
                     if($page=="add_s8"){
                         include "add_sem/add_s8.php";
                     }
-                    // Show Students...............
+                    if($page=="students"){
+                        include "see_students.php";
+                    }
+                    // Show Students
                     if($page=="disp_s1"){
                         include "dis_sem/disp_s1.php";
                     }
@@ -306,6 +327,31 @@
                     }
                     if($page=="disp_s8"){
                         include "dis_sem/disp_s8.php";
+                    }
+                    //See Students........................
+                    if($page=='see_s1'){
+                        include 'see_students/see_s1.php';
+                    }
+                    if($page=='see_s2'){
+                        include 'see_students/see_s2.php';
+                    }
+                    if($page=='see_s3'){
+                        include 'see_students/see_s3.php';
+                    }
+                    if($page=='see_s4'){
+                        include 'see_students/see_s4.php';
+                    }
+                    if($page=='see_s5'){
+                        include 'see_students/see_s5.php';
+                    }
+                    if($page=='see_s6'){
+                        include 'see_students/see_s6.php';
+                    }
+                    if($page=='see_s7'){
+                        include 'see_students/see_s7.php';
+                    }
+                    if($page=='see_s8'){
+                        include 'see_students/see_s8.php';
                     }
                 }else{
             

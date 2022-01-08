@@ -53,7 +53,7 @@
 <body>
 <img id="head" width="160px" height="180px" style="font-family:'PT Serif';" left:10 align='left' src="../css/images/logo.png">
 <br /><br /><br /><br /><br /><br /><br>
-<h2 style="color:#ff0000;font-family:'Acme';" class="page-header">1st Sem Subjects</h2>
+<h2 style="color:#ff0000;font-family:'Acme';" class="page-header">2nd Year 1st Semester Subjects</h2>
 
 <div class="col-lg-10 mcon text-center">
     <table id="mytab1" width="100%" class="mtab table table-bordered table-hover table-responsive">

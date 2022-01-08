@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admission Ticket</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="64x64" href="css/images/logo.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="../css/images/logo.png">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Bitter:wght@100;300;400&family=Bree+Serif&family=Handlee&family=Numans&family=Odibee+Sans&family=PT+Serif:wght@400;700&family=Patrick+Hand&family=Simonetta:ital,wght@0,400;0,900;1,400&family=Trade+Winds&family=Volkhov:wght@400;700&display=swap" rel="stylesheet"> 
     <!--Fontawesome CDN-->
@@ -44,21 +44,35 @@
                     <th>Subject Name</th>
                     <th>Subject Code</th>
                     <th>Credits</th>
+                    <th>Semester</th>
+                    <th>Role</th>
                 </tr>
             </thead>
             <tbody>
+                <?php
+                    include '../connection.php';
+                    $user = $_SESSION['username'];
+                    $i=1;
+                    $select = "SELECT * FROM sub_reg WHERE username='{$user}'";
+                    $result = mysqli_query($conn,$select) or die("query Failed".mysqli_error());
+                    if(mysqli_num_rows($result)>0){
+                        while($row=mysqli_fetch_assoc($result)){
+                ?>
                 <tr>
-                    <td>100</td>
-                    <td>Algorithm</td>
-                    <td>CSE201</td>
-                    <td>3</td>
+                    <td><?php echo $i; ?></td>
+                    <td><?php echo $row['sub_name']; ?></td>
+                    <td><?php echo $row['sub_code']; ?></td>
+                    <td><?php echo $row['credit']; ?></td>
+                    <td><?php echo $row['Semester']; ?></td>
+                    <td><?php echo $row['role']; ?></td>
                 </tr>
-                <tr>
-                    <td>200</td>
-                    <td>Algorithm</td>
-                    <td>CSE201</td>
-                    <td>3</td>
-                </tr>
+                <?php
+                            $i++;
+                        }
+                        
+                    }
+                    
+                ?>
             </tbody>
 
         </table>

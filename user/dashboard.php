@@ -1,4 +1,5 @@
 <?php
+    include 'count_subject.php';
     include "../connection.php";
     session_start();
     if(!isset($_SESSION['username'])){
@@ -24,6 +25,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!--Custom styles-->
+    <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
         .label1 {
@@ -198,7 +200,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
-                <a class="navbar-brand text-white" style="font-family:'Acme';font-size:30px;color: white;padding-right: 750px;" href="#">Welcome, Kajal Bormon </a>
+                <a class="navbar-brand text-white" style="font-family:'Acme';font-size:30px;color: white;padding-right: 750px;" href="#">Welcome, <?php echo $_SESSION['username']; ?> </a>
 
             </div>
             <ul class="nav navbar-nav navbar-right collapsed text-white" id="navbar">
@@ -224,21 +226,157 @@
             <?php
                 @$page = $_GET['page'];
                 if($page!=""){
+                    if($page=='register'){
+                        include 'register.php';
+                    }
                     if($page=="update_profile"){
                         include 'update_profile.php';
                     }
                     if($page=='subjects_reg'){
                         include 'subjects_reg.php';
                     }
-                    if($page='register'){
-                        include 'register.php';
+                    //View Subjects for students
+                    if($page=="disp_s1"){
+                        include 'sub_view/1st_sem.php';
                     }
-                }
-            
+                    if($page=="disp_s2"){
+                        include 'sub_view/2nd_sem.php';
+                    }
+                    if($page=="disp_s3"){
+                        include 'sub_view/3rd_sem.php';
+                    }
+                    if($page=="disp_s4"){
+                        include 'sub_view/4th_sem.php';
+                    }
+                    if($page=="disp_s5"){
+                        include 'sub_view/5th_sem.php';
+                    }
+                    if($page=="disp_s6"){
+                        include 'sub_view/6th_sem.php';
+                    }
+                    if($page=="disp_s7"){
+                        include 'sub_view/7th_sem.php';
+                    }
+                    if($page=="disp_s8"){
+                        include 'sub_view/8th_sem.php';
+                    }
+                   
+                }else{
             ?>
+            <!-- Main Content For Dashboard -->
+            <div class="main_content">
+                <div>
+                    <h1 class="page-header label1" style="font-family: 'Bree serif', serif;">Dashboard</h1>
+                    <section class="section">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                    <a class="dashboard-stat11" href="dashboard.php?page=disp_s1">
+                                        <span class="number"><?php echo $count_first_sem; ?></span>
+                                        <span class="name">Subjects Listed<br />For 1th sem</span>
+                                        <span class="bg-icon"><i class="fa fa-bars"></i></span>
+                                    </a>
+                                    <!-- /.dashboard-stat -->
+                                </div>
+
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <a class="dashboard-stat" href="dashboard.php?page=disp_s2">
+                                        <span class="number"><?php echo $count_second_sem; ?></span>
+                                        <span class="name">Subjects Listed<br />For 2nd sem</span>
+                                        <span class="bg-icon"><i class="fa fa-bars"></i></span>
+                                    </a>
+                                    <!-- /.dashboard-stat -->
+                                </div>
+                                <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
+
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <a class="dashboard-stat11" href="dashboard.php?page=disp_s3">
+                                        <span class="number"><?php echo $count_third_sem; ?></span>
+                                        <span class="name">Subjects Listed<br />For 3rd sem</span>
+                                        <span class="bg-icon"><i class="fa fa-bars"></i></span>
+                                    </a>
+                                    <!-- /.dashboard-stat -->
+                                </div>
+                                <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
+
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <a class="dashboard-stat" href="dashboard.php?page=disp_s4">
+                                        <span class="number"><?php echo $count_fourth_sem; ?></span>
+                                        <span class="name">Subjects Listed<br />For 4th sem</span>
+                                        <span class="bg-icon"><i class="fa fa-bars"></i></span>
+                                    </a>
+                                    <!-- /.dashboard-stat -->
+                                </div>
+                                <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
+
+
+
+                            </div>
+                            <!-- /.row -->
+                            <div class="row" style="margin-top:3%;">
+
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <a class="dashboard-stat" href="dashboard.php?page=disp_s5">
+                                        <span class="number"><?php echo $count_fifth_sem; ?></span>
+                                        <span class="name">Subjects Listed<br />For 5th sem</span>
+                                        <span class="bg-icon"><i class="fa fa-bars"></i></span>
+                                    </a>
+                                    <!-- /.dashboard-stat -->
+                                </div>
+
+
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <a class="dashboard-stat11" href="dashboard.php?page=disp_s6">
+                                        <span class="number"><?php echo $count_six_sem; ?></span>
+                                        <span class="name">Subjects Listed<br />For 6th sem</span>
+                                        <span class="bg-icon"><i class="fa fa-bars"></i></span>
+                                    </a>
+                                    <!-- /.dashboard-stat -->
+                                </div>
+
+
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 ">
+                                    <a class="dashboard-stat" href="dashboard.php?page=disp_s7">
+                                        <span class="number"><?php echo $count_seven_sem; ?></span>
+                                        <span class="name">Subjects Listed<br />For 7th sem</span>
+                                        <span class="bg-icon"><i class="fa fa-bars"></i></span>
+                                    </a>
+                                    <!-- /.dashboard-stat -->
+                                </div>
+
+
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <a class="dashboard-stat11" href="dashboard.php?page=disp_s8">
+                                        <span class="number"><?php echo $count_eight_sem; ?></span>
+                                        <span class="name">Subjects Listed<br />For 8th sem</span>
+                                        <span class="bg-icon"><i class="fa fa-bars"></i></span>
+                                    </a>
+                                    <!-- /.dashboard-stat -->
+                                </div>
+                            </div>
+
+                            <!-- /.container-fluid -->
+
+                            <div class="row" style="margin-top:3%;">
+
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <a class="dashboard-stat1" href="">
+                                        <span class="number counter">3</span>
+                                        <span class="name">Students Registered<br />For Improvement</span>
+                                        <span class="bg-icon"><i class="fa fa-users"></i></span>
+                                    </a>
+                                    <!-- /.dashboard-stat -->
+                                </div>                      
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+                }
+                ?>
             <!-- container-->
               <!-- Scripting -->
-      <script src="js/jquery_library.js"></script>
-      <script src="js/bootstrap.min.js"></script>
+      <script src="../js/jquery_library.js"></script>
+      <script src="../js/bootstrap.min.js"></script>
 </body>
 </html>
