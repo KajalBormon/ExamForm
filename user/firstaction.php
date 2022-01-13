@@ -94,6 +94,7 @@
             ?>  
         </table>
         <button id = "mbtn-a" class = "mybtn" style = "padding:5px;font-size:20px;">Create Excel</button>
+        <a href="dashboard.php?page=register"><i class="fas fa-pen"></i>Register For Exam</a>
     </div>
 </body>
 </html>

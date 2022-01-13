@@ -327,10 +327,9 @@
                     </td> 
                 <tr>
                     <td>
-                        <input type="submit" name="submit" class="login_btn" value="Regular" />
+                        <input type="submit" name="improve" class="login_btn" value="improve/Fail" />
                     </td>
                     <td>
-
                     </td>
                 </tr>
             </table>

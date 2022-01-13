@@ -59,7 +59,6 @@
       color: black;
       font-family: 'Bitter';
     }
-
     .myh1 {
       text-align: center;
       font-size: 30px;
@@ -69,13 +68,11 @@
       font-family: 'PT Serif';
       font-weight: bold;
     }
-
     .geekmark {
       height: 20px;
       width: 20px;
       background-color: green;
     }
-
     body {
       background-color: whitesmoke;
     }
@@ -108,6 +105,7 @@
       </table>
     </form>
     <?php } ?>
+    <button class="btn btn-primary">Admit Download</button>
 
   </div>
 </body>

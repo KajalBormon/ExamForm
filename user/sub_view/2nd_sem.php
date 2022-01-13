@@ -75,7 +75,10 @@
       width: 20px;
       background-color: green;
     }
-
+    .admit_btn a{
+      text-decoration: none;
+      color: white;
+    }
     body {
       background-color: whitesmoke;
     }
@@ -108,7 +111,10 @@
       </table>
     </form>
     <?php } ?>
-
+  </div>
+  <br>
+  <div class="admit_btn" style="margin-left: 62%;">
+    <a href="123.jpg" download><button class="btn btn-danger ml-5"><i class="fas fa-download"></i> Admit Download</button></a>
   </div>
 </body>
 </html>

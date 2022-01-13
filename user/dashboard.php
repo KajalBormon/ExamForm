@@ -2,9 +2,14 @@
     include 'count_subject.php';
     include "../connection.php";
     session_start();
+    $user = $_SESSION['username'];
     if(!isset($_SESSION['username'])){
         header("location:http://localhost/exam_form/");
     }
+    $query = "SELECT * FROM registration WHERE username = '{$user}'";
+    $fetch_query = mysqli_query($conn,$query) or die("Query Failed...".myslqli_error());
+    if(mysqli_num_rows($fetch_query)>0){
+        while($row=mysqli_fetch_assoc($fetch_query)){
 
 ?>
 <!-- Student DASHBOARD -->
@@ -82,7 +87,6 @@
             margin-left: 15%;
             margin-top: auto;
             margin-bottom: 5%;
-            ;
             border: 1px dashed #000000;
             background-color: white;
         }
@@ -152,6 +156,7 @@
             text-align: left;
             cursor: pointer;
             outline: none;
+            font-size: 18px;
         }
         .dropdown-btn:hover {
             color: #f1f1f1;
@@ -200,7 +205,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
-                <a class="navbar-brand text-white" style="font-family:'Acme';font-size:30px;color: white;padding-right: 750px;" href="#">Welcome, <?php echo $_SESSION['username']; ?> </a>
+                <a class="navbar-brand text-white" style="font-family:'Acme';font-size:30px;color: white;padding-right: 750px; text-transform:capitalize;" href="#">Welcome, <?php echo $row['fname'].' '.$row['lname']; ?> </a>
 
             </div>
             <ul class="nav navbar-nav navbar-right collapsed text-white" id="navbar">
@@ -214,11 +219,26 @@
         <div class="sidebar col -l2 -s4">
             <ul>
                 <div>
-                    <img src="../css/images/person.jpg" width="100" height="100" alt="not found" />
+                    <img src="../images/<?php echo $user; ?>/<?php echo $row['image']; ?>" width="100" height="100" alt="not found" />
                 </div>
+                <?php
+        }
+    }
+                ?>
                 <li><a href="dashboard.php"><i class="fas fa-clipboard"></i>Dashboard</a></li>
                 <li><a href="dashboard.php?page=update_profile"><i class="fas fa-user-edit"></i> Update Profile</a></li>
-                <li><a href="dashboard.php?page=register"><i class="fas fa-pen"></i>Register For Exam</a></li>
+                <li>
+                    <div class="mdbtn">
+                        <button class="dropdown-btn"><i class="fas fa-pen"></i>Register Exam<i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-container">
+                            <ul>
+                                <li class="p-1"><a href="dashboard.php?page=register">Regular</a></li>
+                                <li class="p-1"><a href="dashboard.php?page=improve">Improve/Fail</a></li>
+                            </ul>
+                        </div>
+                    </div>    
+                </li>
                 <li><a href="dashboard.php?page=subjects_reg"><i class="far fa-file"></i> Registered Subjects</a></li>
             </ul>
         </div>
@@ -228,6 +248,9 @@
                 if($page!=""){
                     if($page=='register'){
                         include 'register.php';
+                    }
+                    if($page=='improve'){
+                        include 'improve.php';
                     }
                     if($page=="update_profile"){
                         include 'update_profile.php';
@@ -378,5 +401,21 @@
               <!-- Scripting -->
       <script src="../js/jquery_library.js"></script>
       <script src="../js/bootstrap.min.js"></script>
+      <script>
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
