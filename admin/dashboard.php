@@ -328,6 +328,9 @@
                     if($page=="disp_s8"){
                         include "dis_sem/disp_s8.php";
                     }
+                    if($page=='improve'){
+                        include 'dis_sem/improve.php';
+                    }
                     //See Students........................
                     if($page=='see_s1'){
                         include 'see_students/see_s1.php';
@@ -353,6 +356,7 @@
                     if($page=='see_s8'){
                         include 'see_students/see_s8.php';
                     }
+                   
                 }else{
             
             
@@ -455,9 +459,9 @@
                                 <div class="row" style="margin-top:3%;">
 
                                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                        <a class="dashboard-stat1" href="">
-                                            <span class="number counter">3</span>
-                                            <span class="name">Students Registered<br />For Sem End Exam</span>
+                                        <a class="dashboard-stat1" href="dashboard.php?page=improve">
+                                            <span class="number counter"><?php echo "$count_improve"; ?></span>
+                                            <span class="name">Students Registered<br />For Improve Exam</span>
                                             <span class="bg-icon"><i class="fa fa-users"></i></span>
                                         </a>
                                         <!-- /.dashboard-stat -->

@@ -8,6 +8,9 @@
         $fname = mysqli_real_escape_string($conn,$_POST['fname']);
         $lname = mysqli_real_escape_string($conn,$_POST['lname']);
         $batch = mysqli_real_escape_string($conn,$_POST['batch']);
+        $session = mysqli_real_escape_string($conn,$_POST['session']);
+        $registration = mysqli_real_escape_string($conn,$_POST['registration']);
+        $roll = mysqli_real_escape_string($conn,$_POST['roll']);
         $dob = mysqli_real_escape_string($conn,$_POST['dob']);
         $gen = mysqli_real_escape_string($conn,$_POST['gen']);
         $username = mysqli_real_escape_string($conn,$_POST['username']);
@@ -21,7 +24,7 @@
         if(mysqli_query($conn,$sql)){
             $err = "<font color='red'>Username Already Exists..!</font>";
         }else{
-            $insert = "INSERT INTO registration(id,fname,lname,continue_batch,dob,gender,username,image,mail,dept,phone,password) values('','{$fname}','{$lname}','{$batch}','{$dob}','{$gen}','{$username}','{$file_name}','{$mail}','{$dept}','{$phone}','{$pass}')";
+            $insert = "INSERT INTO registration(id,fname,lname,continue_batch,session,registration,roll,dob,gender,username,image,mail,dept,phone,password) values('','{$fname}','{$lname}','{$batch}','{$session}','{$registration}','{$roll}','{$dob}','{$gen}','{$username}','{$file_name}','{$mail}','{$dept}','{$phone}','{$pass}')";
 
             $data = mysqli_query($conn,$insert);
 
@@ -164,6 +167,39 @@
                     </td>
                     <td class="td1">
                         <input type="number" name="batch" autocomplete="off" placeholder="12" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Session</label>
+                    </td>
+                    <td>
+
+                    </td>
+                    <td class="td1">
+                        <input type="text" name="session" autocomplete="off" placeholder="2017-18" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Registration No.</label>
+                    </td>
+                    <td>
+
+                    </td>
+                    <td class="td1">
+                        <input type="number" name="registration" autocomplete="off" placeholder="6725" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Roll No.</label>
+                    </td>
+                    <td>
+
+                    </td>
+                    <td class="td1">
+                        <input type="number" name="roll" autocomplete="off" placeholder="18102014" />
                     </td>
                 </tr>
 

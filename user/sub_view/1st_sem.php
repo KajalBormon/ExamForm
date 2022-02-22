@@ -1,5 +1,7 @@
 <?php
-    include '../connection.php';
+    include '../../connection.php';
+    session_start();
+    $user = $_SESSION['username'];
     $select = "SELECT * FROM sub_reg WHERE Semester='1' AND username='{$user}'";
     $sql = mysqli_query($conn,$select);
     $i=1;
@@ -105,8 +107,10 @@
       </table>
     </form>
     <?php } ?>
-    <button class="btn btn-primary">Admit Download</button>
-
+  </div>
+  <br>
+  <div class="admit_btn" style="margin-left: 74%;">
+    <a href=""><button class="btn btn-danger"><i class="fas fa-download"></i> Admit Download</button></a>
   </div>
 </body>
 </html>

@@ -231,15 +231,7 @@
         }
         
     }
-    // Improvement registration for Examination
-    if(isset($_POST['improve'])){
-        $sem = $_POST['sem'];
-        $user = $_SESSION['username'];
-        if($sem=='1'){
-            include "improvement/1st_sem.php";
-        }
-       
-    }
+
 
 ?>
 <!-- End Code for register -->

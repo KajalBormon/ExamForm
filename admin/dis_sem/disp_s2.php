@@ -93,7 +93,7 @@
         <script>
             function DeleteUser(id){
                 if(confirm("You are Sure..? You want to delete this subjecet..??")){
-                    window.location.href="delete/delete_1st.php?id=" +id;
+                    window.location.href="delete/delete_2nd.php?id=" +id;
                 }
             }
         </script>

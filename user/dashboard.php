@@ -214,7 +214,6 @@
                 </li>
             </ul>
     </nav>
-
     <div class="wrapper">
         <div class="sidebar col -l2 -s4">
             <ul>
@@ -227,18 +226,7 @@
                 ?>
                 <li><a href="dashboard.php"><i class="fas fa-clipboard"></i>Dashboard</a></li>
                 <li><a href="dashboard.php?page=update_profile"><i class="fas fa-user-edit"></i> Update Profile</a></li>
-                <li>
-                    <div class="mdbtn">
-                        <button class="dropdown-btn"><i class="fas fa-pen"></i>Register Exam<i class="fa fa-caret-down"></i>
-                        </button>
-                        <div class="dropdown-container">
-                            <ul>
-                                <li class="p-1"><a href="dashboard.php?page=register">Regular</a></li>
-                                <li class="p-1"><a href="dashboard.php?page=improve">Improve/Fail</a></li>
-                            </ul>
-                        </div>
-                    </div>    
-                </li>
+                <li><a href="registered_exm.php"><i class="fas fa-pen"></i>Register Exam</a></li>
                 <li><a href="dashboard.php?page=subjects_reg"><i class="far fa-file"></i> Registered Subjects</a></li>
             </ul>
         </div>
@@ -294,7 +282,7 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                    <a class="dashboard-stat11" href="dashboard.php?page=disp_s1">
+                                    <a class="dashboard-stat11" href="1st_sem_view.php">
                                         <span class="number"><?php echo $count_first_sem; ?></span>
                                         <span class="name">Subjects Listed<br />For 1th sem</span>
                                         <span class="bg-icon"><i class="fa fa-bars"></i></span>
@@ -303,7 +291,7 @@
                                 </div>
 
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                    <a class="dashboard-stat" href="dashboard.php?page=disp_s2">
+                                    <a class="dashboard-stat" href="2nd_sem_view.php">
                                         <span class="number"><?php echo $count_second_sem; ?></span>
                                         <span class="name">Subjects Listed<br />For 2nd sem</span>
                                         <span class="bg-icon"><i class="fa fa-bars"></i></span>
@@ -313,7 +301,7 @@
                                 <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
 
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                    <a class="dashboard-stat11" href="dashboard.php?page=disp_s3">
+                                    <a class="dashboard-stat11" href="3rd_sem_view.php">
                                         <span class="number"><?php echo $count_third_sem; ?></span>
                                         <span class="name">Subjects Listed<br />For 3rd sem</span>
                                         <span class="bg-icon"><i class="fa fa-bars"></i></span>
@@ -323,7 +311,7 @@
                                 <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
 
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                    <a class="dashboard-stat" href="dashboard.php?page=disp_s4">
+                                    <a class="dashboard-stat" href="4th_sem_view.php">
                                         <span class="number"><?php echo $count_fourth_sem; ?></span>
                                         <span class="name">Subjects Listed<br />For 4th sem</span>
                                         <span class="bg-icon"><i class="fa fa-bars"></i></span>
@@ -339,7 +327,7 @@
                             <div class="row" style="margin-top:3%;">
 
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                    <a class="dashboard-stat" href="dashboard.php?page=disp_s5">
+                                    <a class="dashboard-stat" href="5th_sem_view.php">
                                         <span class="number"><?php echo $count_fifth_sem; ?></span>
                                         <span class="name">Subjects Listed<br />For 5th sem</span>
                                         <span class="bg-icon"><i class="fa fa-bars"></i></span>
@@ -349,7 +337,7 @@
 
 
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                    <a class="dashboard-stat11" href="dashboard.php?page=disp_s6">
+                                    <a class="dashboard-stat11" href="6th_sem_view.php">
                                         <span class="number"><?php echo $count_six_sem; ?></span>
                                         <span class="name">Subjects Listed<br />For 6th sem</span>
                                         <span class="bg-icon"><i class="fa fa-bars"></i></span>
@@ -359,7 +347,7 @@
 
 
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 ">
-                                    <a class="dashboard-stat" href="dashboard.php?page=disp_s7">
+                                    <a class="dashboard-stat" href="7th_sem_view.php">
                                         <span class="number"><?php echo $count_seven_sem; ?></span>
                                         <span class="name">Subjects Listed<br />For 7th sem</span>
                                         <span class="bg-icon"><i class="fa fa-bars"></i></span>
@@ -369,7 +357,7 @@
 
 
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                    <a class="dashboard-stat11" href="dashboard.php?page=disp_s8">
+                                    <a class="dashboard-stat11" href="8th_sem_view.php">
                                         <span class="number"><?php echo $count_eight_sem; ?></span>
                                         <span class="name">Subjects Listed<br />For 8th sem</span>
                                         <span class="bg-icon"><i class="fa fa-bars"></i></span>
@@ -383,8 +371,8 @@
                             <div class="row" style="margin-top:3%;">
 
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                    <a class="dashboard-stat1" href="">
-                                        <span class="number counter">3</span>
+                                    <a class="dashboard-stat1" href="improve_sem_view.php">
+                                        <span class="number counter"><?php echo $count_improve; ?></span>
                                         <span class="name">Students Registered<br />For Improvement</span>
                                         <span class="bg-icon"><i class="fa fa-users"></i></span>
                                     </a>

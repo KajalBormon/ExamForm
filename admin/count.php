@@ -89,4 +89,15 @@ if(mysqli_num_rows($query_eight)>0){
     }
 }
 
+// For Improvement
+include "../connection.php";
+$improve = "SELECT * FROM sub_reg WHERE role='Improve'";
+$query_improve = mysqli_query($conn,$improve);
+$count_improve = 0;
+if(mysqli_num_rows($query_improve)>0){
+    while(mysqli_fetch_assoc($query_improve)){
+        $count_improve++;
+    }
+}
+
 ?>
