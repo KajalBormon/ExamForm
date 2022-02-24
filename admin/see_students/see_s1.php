@@ -44,9 +44,7 @@
         }
         .search_form input['type=submit']{
             cursor: pointer;
-
-
-left: 65%;
+            left: 65%;
         }
       
         </style>

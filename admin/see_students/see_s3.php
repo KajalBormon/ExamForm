@@ -77,7 +77,7 @@ left: 65%;
             $result = mysqli_query($conn,$query1);
             $num_rows = mysqli_num_rows($result);
             if(!$num_rows){
-                echo "<h2 style='color:red;color:#ff0000;font-family:Acme;position:relative;top:35px;left:2%;''>No Students Have Registered For 1st Year 1st Semester Exam Yet.</h2>";
+                echo "<h2 style='color:red;color:#ff0000;font-family:Acme;position:relative;top:35px;left:2%;''>No Students Have Registered For 2nd Year 1st Semester Exam Yet.</h2>";
             }else{
     ?>
     <div class = "col-lg-12 mcon text-center">
@@ -124,7 +124,7 @@ left: 65%;
             $result = mysqli_query($conn,$query1);
             $num_rows = mysqli_num_rows($result);
             if(!$num_rows){
-                echo "<h2 style='color:red;color:#ff0000;font-family:Acme;position:relative;top:35px;left:2%;''>No Students Have Registered For 1st Year 1st Semester Exam Yet.</h2>";
+                echo "<h2 style='color:red;color:#ff0000;font-family:Acme;position:relative;top:35px;left:2%;''>No Students Have Registered For 2nd Year 1st Semester Exam Yet.</h2>";
             }else{ ?>
                 <table id="mytab1" width = "100%" class="mtab table table-bordered table-hover table-responsive" style = "margin-top:0;">
     	    <tr align = 'center' class = "text-center" style = "background-color:rgba(0,128,128,0.3);color:black;font-size:25px;text-align:center;font-family: 'PT serif';" class="table-info">

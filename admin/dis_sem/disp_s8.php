@@ -78,7 +78,7 @@
         <td style='border:2px solid black' align = 'center'><?php echo $row['sub_name']; ?></td>
         <td style='border:2px solid black' align = 'center'><?php echo $row['sub_code']; ?></td>
         <td style='border:2px solid black' align = 'center'><?php echo $row['credit']; ?></td>
-        <td align='center' style='border:2px solid black'> <a href="" style='color:green'><i class="fas fa-pencil-alt"></i></a> </td>
+        <td align='center' style='border:2px solid black'> <a href="update/update_8th.php?id=<?php echo $row['id']; ?>" style='color:green'><i class="fas fa-pencil-alt"></i></a> </td>
         <td align='center' style='border:2px solid black'> <a href="javascript:DeleteUser('<?php echo $row['id']; ?>')" style='color:red'><i class="fas fa-trash"></i></a> </td>
     </tr>
     <?php

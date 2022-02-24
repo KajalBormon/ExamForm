@@ -36,8 +36,8 @@
 
 <body>
     <h1 class="mh1" style="color:black;">Add Subject To 5th Semester</h1>
-    <div class="forms">
-        <form class="myform" method="post">
+    <div class="forms" style="width: 60%;">
+        <form class="myform" method="post" style="width: 100%;">
             <p style="font-family:'Bitter';font-size:20px;text-align:center;"><?php echo @$err; ?></p>
             <table width="100%">
                 <tr>

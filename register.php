@@ -268,9 +268,9 @@
                     <td class="td1">
                         <select name="dept" class="select1" autocomplete="off" placeholder="computer science" required>
                             <option name="s1" selected> Computer Science & Engineering</option>
-                            <option name="s2"> Environmental Science and Engineering</option>
+                            <!-- <option name="s2"> Environmental Science and Engineering</option>
                             <option name="s3"> Electrical and Electronic Engineering </option>
-                            <option name="s4"> Statistics </option>
+                            <option name="s4"> Statistics </option> -->
                   
                         </select>
                     </td>
