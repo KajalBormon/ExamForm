@@ -303,7 +303,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <p style = "font-family:'PT serif';color:white;">© Copyright 2021, All Rights Reserved.</p>
+                    <p style = "font-family:'PT serif';color:white;">© Copyright 2022, All Rights Reserved.</p>
                 </div>
             </div>
         </div>

@@ -160,13 +160,13 @@
                 </tr>
                 <tr>
                     <td>
-                        <label>Continue Batch</label>
+                        <label>Continue Session</label>
                     </td>
                     <td>
 
                     </td>
                     <td class="td1">
-                        <input type="number" name="batch" autocomplete="off" placeholder="12" />
+                        <input type="text" name="batch" autocomplete="off" placeholder="2017-18" />
                     </td>
                 </tr>
                 <tr>

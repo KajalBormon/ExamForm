@@ -6,13 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registered Students</title>
-    <script>
+    <!-- <script>
         function DeleteUser(id){
             if(confirm("Are You Sure..? You Want To Delete this User...?")){
                 window.location.href="delete_user.php?id="+id;
             }
         }
-    </script>
+    </script> -->
     <style type = "text/css">
         .mcon{
             font-family:'Acme';
@@ -61,9 +61,9 @@ left: 65%;
         <div class="search_form" class="input-group">
             <form action="" method="GET">
                 <input type="hidden" name="page" value="see_s3"> 
-                <input type="text" class="form-control" style="text-align:left;position:absolute;width:20%;left:57%" name="ser" placeholder="Search By Continue Batch">
+                <input type="text" class="form-control" style="text-align:left;position:absolute;width:20%;left:57%" name="ser" placeholder="Search By Continue Session">
                 
-               <input type="submit" class="input-group-text" style="cursor:pointer; position: absolute; text-align: right;left: 73%;" value="Searh" name="search">
+               <input type="submit" class="input-group-text" style="cursor:pointer; position: absolute; text-align: right;left: 74%;" value="Searh" name="search">
             </form>
         </div>
     </div>
@@ -90,7 +90,7 @@ left: 65%;
                 <th style='border:2px solid black'>Semester</th>
                 <th style='border:2px solid black'>Mail - Id</th>
                 <th style='border:2px solid black'>Phone</th>
-                <th style='border:2px solid black'>Delete</th>
+                <!-- <th style='border:2px solid black'>Delete</th> -->
 		    </tr>
             <?php
                 $i=1;
@@ -105,7 +105,7 @@ left: 65%;
                     <td style='border:2px solid black' align = 'center'><?php echo $row['phone']; ?></td>
           
                 
-                    <td align = 'center' style='border:2px solid black'> <a href="javascript:DeleteUser('<?php echo $row['id']; ?>')" style='color:red'><i class = "fa fa-trash"></i></a> </td>
+                    <!-- <td align = 'center' style='border:2px solid black'> <a href="javascript:DeleteUser('<?php echo $row['id']; ?>')" style='color:red'><i class = "fa fa-trash"></i></a> </td> -->
            
                 </tr>
                <?php
@@ -135,7 +135,7 @@ left: 65%;
                 <th style='border:2px solid black'>Semester</th>
                 <th style='border:2px solid black'>Mail - Id</th>
                 <th style='border:2px solid black'>Phone</th>
-                <th style='border:2px solid black'>Delete</th>
+                <!-- <th style='border:2px solid black'>Delete</th> -->
 		    </tr>
             <?php
                 $i=1;
@@ -150,7 +150,7 @@ left: 65%;
                     <td style='border:2px solid black' align = 'center'><?php echo $row['phone']; ?></td>
           
                 
-                    <td align = 'center' style='border:2px solid black'> <a href="javascript:DeleteUser('<?php echo $row['id']; ?>')" style='color:red'><i class = "fa fa-trash"></i></a> </td>
+                    <!-- <td align = 'center' style='border:2px solid black'> <a href="javascript:DeleteUser('<?php echo $row['id']; ?>')" style='color:red'><i class = "fa fa-trash"></i></a> </td> -->
            
                 </tr>
                <?php

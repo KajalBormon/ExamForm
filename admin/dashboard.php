@@ -215,7 +215,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
-                <a class="navbar-brand text-white" style="font-family:'Acme';font-size:30px;color: white;" href="#">Welcome, Admin</a>
+                <a class="navbar-brand text-white" style="font-family:'Acme';font-size:30px;color: white;" href="">Welcome, Admin</a>
 
             </div>
             <ul class="nav navbar-nav navbar-right collapsed hide-on-med-and-down text-white hide-on-med" id="navbar">
@@ -246,6 +246,7 @@
                                 <li class="p-1"><a href="dashboard.php?page=see_s6">Semester 6 Students</a></li>
                                 <li class="p-1"><a href="dashboard.php?page=see_s7">Semester 7 Students</a></li>
                                 <li class="p-1"><a href="dashboard.php?page=see_s8">Semester 8 Students</a></li>
+                                <li class="p-1"><a href="dashboard.php?page=improve_student">Improvement Students</a></li>
                             </ul>
                         </div>
                     </div>
@@ -356,7 +357,10 @@
                     if($page=='see_s8'){
                         include 'see_students/see_s8.php';
                     }
-                   
+                    if($page=='improve_student'){
+                        include 'see_students/improve_student.php';
+                    }
+   
                 }else{
             
             
@@ -372,7 +376,7 @@
                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                         <a class="dashboard-stat11" href="dashboard.php?page=disp_s1">
                                             <span class="number"><?php echo "$count_first_sem"; ?></span>
-                                            <span class="name">Subjects Listed<br />For 1th sem</span>
+                                            <span class="name">Subjects Listed<br />For 1st sem</span>
                                             <span class="bg-icon"><i class="fa fa-bars"></i></span>
                                         </a>
                                         <!-- /.dashboard-stat -->

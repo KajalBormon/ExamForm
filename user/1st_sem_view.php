@@ -6,7 +6,7 @@
         header("location:http://localhost/exam_form/");
     }
     $query = "SELECT * FROM registration WHERE username = '{$user}'";
-    $fetch_query = mysqli_query($conn,$query) or die("Query Failed...".mysqli_error());
+    $fetch_query = mysqli_query($conn,$query) or die("Query Failed...".myslqli_error());
     if(mysqli_num_rows($fetch_query)>0){
         while($row=mysqli_fetch_assoc($fetch_query)){
 
@@ -185,7 +185,7 @@
       color: white;
     }
     .forms {
-      width: 80%;
+      width: fit-content;
       height: fit-content;
       margin-left: auto;
       margin-right: auto;
@@ -205,18 +205,18 @@
 
     }
     table th {
-      text-align: left;;
+      text-align: center;
       padding: 8px;
-      color: black;
+      color: rgb(4, 71, 32);
       font-family: 'Bitter';
       text-transform: capitalize;
       text-shadow: rgb(240, 240, 12);
-      font-size: 20px;
+      font-size: 26px;
     }
     table td{
-      text-align: left;
+      text-align: center;
       padding: 5px;
-      font-size: 18px;
+      font-size: 22px;
       color: black;
       font-family: 'Bitter';
     }
@@ -249,15 +249,6 @@
         .dropdown-btn .fas {
             width: 25px;
         }
-        .info_ad_center{
-            text-align: center;
-        }
-        .profile_img{
-            position: absolute;
-            top: 10%;
-            right: 14%;
-        }
-       
     </style>
 </head>
 
@@ -298,97 +289,47 @@
         </div>
         <div class="col-sm-12 col-sm-offset-12 col-md-10 col-md-offset-2 main">
         <?php
-                $select_std = "SELECT * FROM registration WHERE username='{$user}'";
-                $std_query = mysqli_query($conn,$select_std);
-                if(mysqli_num_rows($std_query)>0){
-                    while($row=mysqli_fetch_assoc($std_query)){
-            
-            ?>
-            <!-- Admit Card -->
+            $select = "SELECT * FROM sub_reg WHERE Semester='1' AND role='Regular' AND username='{$user}'";
+            $sql = mysqli_query($conn,$select);
+            $i=1;
+            $num_rows = mysqli_num_rows($sql);
+            if(!$num_rows){
+            echo "<div style='color: red; font-weight: bold; font-size: 30px;'>You have not Registered for 1st Semester...!!</div>";
+            }else{   
+        ?>
+            <h1 class="myh1">1st Year 1st Semester Computer Science & Engineering Subjects</h1>
             <div class="forms">
                 <form class="myform" method="POST" action="">
-                    <div class="info_center">
-                        <div class="info_ad_center">
-                            <img heigh="100" width="80" src="../css/images/logo.png" alt="">
-                            <h2>Jatiya Kabi Kazi Nazrul Islam University</h1>
-                            <h4>Trishal,Mymensing-2200</h4>
-                            <h4>Admit Card</h4>
-                        </div>
-                        <div class="profile_img">
-                            <img heigh="110" width="90" src="../images/<?php echo $row['username'] ?>/<?php echo $row['image']; ?>" alt="">
-                        </div>
-                    </div>
-                    <div>
-          
-                        <table width="100%">
-                            <tr>
-                                <td>Exam Name: Bsc Engineering</td>
-                            </tr>
-                            <tr>
-                                <td>Student Name: <?php echo $row['fname'].' '.$row['lname']; ?></td>
-                                <td>Registration No.: <?php echo $row['registration'];?></td>
-                                <td>Session: <?php echo $row['session'];?></td>
-                            </tr>
-                            <tr>
-                                <td>Roll No.: <?php echo $row['roll'];?></td>
-                                <td>Date: <?php echo date("d-m-Y") ?></td>
-                            </tr>
-                        </table>
-                        <?php } }?>
-                    </div>
-                    
-                    <table width="100%">
-                        <tr>
-                            <th> Subject name</th>
-                            <th> Course Code</th>
-                        </tr>
-                        <?php
-                        $select_sub = "SELECT * FROM sub_reg WHERE Semester='1' AND role='Regular' AND username='{$user}'";
-                        $sql_sub = mysqli_query($conn,$select_sub);
-                        if(mysqli_num_rows($sql_sub)>0){
-                            while($row=mysqli_fetch_assoc($sql_sub)){
-                        ?>
-                        <tr>
-                            <td><?php echo $row['sub_name']; ?></td>
-                            <td><?php echo $row['sub_code']; ?></td>
-                        </tr>
-                       
-                        <?php } } ?>
-                        
-                        <tr>
-                            <td></td>
-                            <td>-----------------</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Exam Controller</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td  style='position:absolute ; right: 158px'>Jatiya Kabi Kazi Nazrul Islam University</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                        </tr>
-                    </table>
-                    <hr class="hr-black" style="background-color: #000000;">
-                    <div style="font-size: 15px;">
-                        N.B: Students Must be Known to Exam time and signatured at attendence Page
-                    </div>
+                <table width="100%">
+                    <tr>
+                    <th>SI NO.</th>
+                    <th> Subject name</th>
+                    <th> Subject Code</th>
+                    <th> Credits </th>
+                    </tr>
+                    <?php while ($row = mysqli_fetch_array($sql)){ ?>
+                    <tr style='color:black;font-size:18px;'>
+                        <td><?php echo $i; ?></td>
+                        <td><?php echo $row['sub_name'];?></td>
+                        <td align = 'center'><?php echo $row['sub_code'];?> </td>
+                        <td align = 'center'><?php echo $row['credit']; ?></td>
+                    </tr>
+                    <?php 
+                    $i++;
+                    } 
+                    ?>
+                </table>
                 </form>
-
+                <?php } ?>
             </div>
-            <!-- End Admit Card -->
             <br>
-            <div class="admit_btn" style="margin-left: 74%;">
-                <a href="practice.php"><button class="btn btn-danger"><i class="fas fa-download"> Admit Download</i></button></a>
+            <div class="admit_btn" style="margin-left: 76%;">
+                <a href="download/download_1st.php"><button class="btn btn-danger"><i class="fas fa-download"></i> Admit Download</button></a>
             </div>
-          
 
    
-    <!-- container-->
-    <!-- Scripting -->
+            <!-- container-->
+              <!-- Scripting -->
       <script src="../js/jquery_library.js"></script>
       <script src="../js/bootstrap.min.js"></script>
       <script>

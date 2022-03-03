@@ -243,7 +243,7 @@
                                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                     <a class="dashboard-stat11" href="regular.php">
                                         <span class="number">Regular</span>
-                                        <span class="name">Subjects Listed<br />For 1th to 8th sem</span>
+                                        <span class="name">Subjects Listed<br />For 1st to 8th sem</span>
                                         <span class="bg-icon"><i class="fa fa-bars"></i></span>
                                     </a>
                                     <!-- /.dashboard-stat -->
@@ -252,7 +252,7 @@
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                     <a class="dashboard-stat" href="improve.php">
                                         <span class="number">Improve</span>
-                                        <span class="name">Subjects Listed<br />For 1th to 8th sem</span>
+                                        <span class="name">Subjects Listed<br />For 1st to 8th sem</span>
                                         <span class="bg-icon"><i class="fa fa-bars"></i></span>
                                     </a>
                                     <!-- /.dashboard-stat -->

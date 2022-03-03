@@ -284,7 +284,7 @@
                                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                     <a class="dashboard-stat11" href="1st_sem_view.php">
                                         <span class="number"><?php echo $count_first_sem; ?></span>
-                                        <span class="name">Subjects Listed<br />For 1th sem</span>
+                                        <span class="name">Subjects Listed<br />For 1st sem</span>
                                         <span class="bg-icon"><i class="fa fa-bars"></i></span>
                                     </a>
                                     <!-- /.dashboard-stat -->
@@ -371,7 +371,7 @@
                             <div class="row" style="margin-top:3%;">
 
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                    <a class="dashboard-stat1" href="improve_sem_view.php">
+                                    <a class="dashboard-stat1" href="improve_action.php">
                                         <span class="number counter"><?php echo $count_improve; ?></span>
                                         <span class="name">Students Registered<br />For Improvement</span>
                                         <span class="bg-icon"><i class="fa fa-users"></i></span>

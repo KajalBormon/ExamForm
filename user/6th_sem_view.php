@@ -323,8 +323,8 @@
                 <?php } ?>
             </div>
             <br>
-            <div class="admit_btn" style="margin-left: 74%;">
-                <a href=""><button class="btn btn-danger"><i class="fas fa-download"></i> Admit Download</button></a>
+            <div class="admit_btn" style="margin-left: 72%;">
+                <a href="download/download_6th.php"><button class="btn btn-danger"><i class="fas fa-download"></i> Admit Download</button></a>
             </div>
 
    
